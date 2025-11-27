@@ -128,7 +128,6 @@ export async function POST(request: Request) {
       const ai = new GoogleGenAI({ apiKey: key });
       const upload = (await ai.files.upload({
         file: tempPath,
-        displayName: file.name,
       })) as UploadResponse;
 
       const fileRef = upload.file ?? {
